@@ -1,12 +1,13 @@
 import { Auth } from "../utils";
+import AuthProvider from "../components/AuthProvider";
 
 const Todo = (props) => {
   const { history } = props;
 
   return (
-    <Auth.CheckJWT history={history}>
+    <AuthProvider history={history}>
       <div>Hello Todo Pages</div>
-    </Auth.CheckJWT>
+    </AuthProvider>
   );
   /* 
   const { history } = props;
