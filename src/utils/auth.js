@@ -1,5 +1,4 @@
 import { decode } from "jsonwebtoken";
-import { useEffect } from "react";
 
 const Auth = {
   checkVaildJWT: (jwt) => {

@@ -1,4 +1,3 @@
-import { Auth } from "../utils";
 import AuthProvider from "../components/AuthProvider";
 
 const Todo = (props) => {
