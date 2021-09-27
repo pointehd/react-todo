@@ -19,7 +19,7 @@ const AuthProvider = (props) => {
     } else {
       axios.defaults.headers.common = { authorization: `Bearer ${jwt}` };
       const userInfo = decode(jwt);
-      //   console.log(userInfo);
+      console.log(userInfo);
       setUser(userInfo);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

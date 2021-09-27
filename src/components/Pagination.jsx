@@ -10,7 +10,7 @@ const Pagination = (props) => {
     .map((_v, i) => i + 1);
 */
   const [pages, setPages] = useState([]);
-  console.log(user);
+  console.log("pagination: ", user);
   useEffect(() => {
     const paginationLength = Math.ceil(totalCount / pageSize);
     const pages = [];

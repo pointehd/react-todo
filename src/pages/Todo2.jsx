@@ -6,10 +6,13 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import Pagenation from "../components/Pagination";
 import UserContext from "../components/UserContext";
+import AuthProviderCover from "../components/AuthProviderCover";
 
 const Todo2 = (props) => {
   const { history } = props;
+
   const { user } = useContext(UserContext);
+  console.log("test", user);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const { loading, data, error } = Hook.useAsync(async () => {
@@ -32,9 +35,13 @@ const Todo2 = (props) => {
     setPageSize(e.target.value);
   };
   console.log(user);
+
   return (
-    <AuthProvider history={history}>
+    <AuthProviderCover history={history}>
+      {/* 하나더 감싸도 context 를 가져오지 못함. */}
+      <div>loginUser : {user.email}</div>
       <div>
+        <div>{user.name}</div>
         {page}
         {loading && <Loading />}
         {error && <Error />}
@@ -56,7 +63,7 @@ const Todo2 = (props) => {
           <input onChange={changePageSize} value={pageSize} />
         </div>
       </div>
-    </AuthProvider>
+    </AuthProviderCover>
   );
 };
 
